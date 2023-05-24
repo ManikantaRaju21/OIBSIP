@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Temperature Converter</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #a6cddb;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      border: 2px solid #808080;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    input[type="text"] {
+      padding: 5px;
+      width: 150px;
+    }
+
+    button {
+      padding: 10px;
+      margin-top: 10px;
+      background-color: #4caf50;
+      color: #ffffff;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    #thermometer {
+      display: block;
+      margin: 30px auto;
+      width: 100px;
+    }
+  </style>
+</head>
+<body>
+  <div style="background-image: url('century_bg.jpg'); background-size: cover; padding: 20px;">
+    <h1>Temperature Converter</h1>
+
+    <div class="container">
+      <label>Enter temperature in Celsius:</label>
+      <input type="text" id="celsiusInput">
+
+      <label>Enter temperature in Fahrenheit:</label>
+      <input type="text" id="fahrenheitInput">
+
+      <button onclick="convertToCelsius()">Convert to Celsius</button>
+      <button onclick="convertToFahrenheit()">Convert to Fahrenheit</button>
+    </div>
+
+    
+  </div>
+
+  <script>
+    function convertToCelsius() {
+      var fahrenheit = parseFloat(document.getElementById("fahrenheitInput").value);
+      var celsius = (fahrenheit - 32) * 5 / 9;
+      document.getElementById("celsiusInput").value = celsius.toFixed(2);
+    }
+
+    function convertToFahrenheit() {
+      var celsius = parseFloat(document.getElementById("celsiusInput").value);
+      var fahrenheit = (celsius * 9 / 5) + 32;
+      document.getElementById("fahrenheitInput").value = fahrenheit.toFixed(2);
+    }
+  </script>
+</body>
+</html>
